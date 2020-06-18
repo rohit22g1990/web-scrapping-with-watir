@@ -2,11 +2,10 @@ require 'watir'
 require 'pg'
 
 begin
-	con = PG.connect( :hostaddr=>"127.0.0.1", :port=>5432, :dbname=>"scrapper", :user=>"postgres", :password=>"postgres")
+  con = PG.connect( :hostaddr=>"127.0.0.1", :port=>5432, :dbname=>"scrapper", :user=>"postgres", :password=>"postgres")
 rescue PG::Error => e
   puts e.message 
 end
-# con.exec("INSERT INTO scrapper_data (hotel_name, price) VALUES ('Roit', 5555555)")
 
 browser = Watir::Browser.new
 
