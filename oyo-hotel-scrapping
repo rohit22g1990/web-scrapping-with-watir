@@ -14,14 +14,13 @@ sleep 2
 hotels = Array.new
 browser.divs(class: 'hotelCardListing__descriptionWrapper').each do |hotel|
   hotelHash = Hash.new
-	if !hotel.h3.text.nil?
-			hotelHash['name'] = hotel.h3.text
-			hotelHash['price'] = hotel.span(class: 'listingPrice__finalPrice').text
-	end
-	
-	if !hotelHash.empty?
-			hotels << hotelHash
-	end
+  if !hotel.h3.text.nil?
+    hotelHash['name'] = hotel.h3.text
+    hotelHash['price'] = hotel.span(class: 'listingPrice__finalPrice').text
+  end
+  if !hotelHash.empty?
+    hotels << hotelHash
+  end
 end
 
 puts "Hotels List: "
