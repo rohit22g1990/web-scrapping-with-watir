@@ -9,7 +9,7 @@ browser.text_field(id: 'autoComplete__home').set 'Pune'
 browser.div(class: 'geoSuggestionsList__container').divs.first.click
 browser.button(class: 'searchButton--home').click
 
-sleep 2
+browser.div(:class => 'hotelCardListing__descriptionWrapper').wait_until(&:present?)
 
 hotels = Array.new
 browser.divs(class: 'hotelCardListing__descriptionWrapper').each do |hotel|
